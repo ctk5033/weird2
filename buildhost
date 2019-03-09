@@ -1,0 +1,8 @@
+rm weird2
+echo weird2
+g++ -o mainw -std=c++0x -pedantic -Wall weird2.cpp \
+-L/usr/local/lib -I/usr/include/SDL2 -lSDL2 -lpthread \
+-lEGL -lGLESv2 \
+-I/opt/vc/include -L/opt/vc/lib -lbcm_host
+
+
