@@ -295,20 +295,24 @@ file.open("log.txt", fstream::out | fstream::app);
 	if (!Renderer::createSurface()){return 0;}
 	
 	if (!Renderer::init(1024,768)){return 0;}
-	Renderer::swapBuffers();
 	
-	//SmallFunc();
-
-file.close();
 	
-	//SDL_Rect r = {0,0,320,240};
- // SDL_FillRect(Renderer::sdlScreen,&r, SDL_MapRGB(Renderer::sdlScreen->format, 200,200,0) );
-
-  //SDL_Flip( Renderer::sdlScreen );
+	long ticks = SDL_GetTicks();
+	int frames;
+	
+	while (SDL_GetTicks() - ticks < 5000)
+	{
+    	Renderer::swapBuffers();
+    	frames++;
+	}
+	
+    std::cout << "frames:" << frames << std::endl;
+	std::cout << "fps:" << frames/5 << std::endl;
   
   
+  
 	
-	SDL_Delay( 2000 );
+	SDL_Delay( 1000 );
 	
 	//system("PAUSE");
 	
